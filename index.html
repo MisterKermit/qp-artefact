@@ -66,7 +66,8 @@
 
         <!-- Jumbotron -->
         <div class="jumbotron">
-            <h1>The Organizaion of Pandora</h1>
+            <h1>The Organizaion of </h1>
+            <span id="typed-text"></span>
             <p>
                 As a secretive resistance organization, our mission transcends the shadows, aiming to unveil truths obscured by curtains of deception.</p>
             <p>Through clandestine maneuvers and strategic alliances, we endeavor to awaken the masses to the realities shrouded by veils of misinformation and oppression.</p>
@@ -81,6 +82,29 @@
                 <!-- <a class="btn btn-primary" href="//github.com/Bachittarjeet/Hacker-Bootstrap-Template/" id="stars"></a> -->
             </p>
         </div>
+
+
+        <script>
+            const text = "Pandora"; // Text to be typed
+            const typingSpeed = 100; // Speed of typing (in milliseconds)
+
+            function typeText(index) {
+            if (index <= text.length) {
+                const currentText = text.slice(0, index);
+                document.getElementById("typed-text").innerText = currentText;
+                setTimeout(() => {
+                typeText(index + 1);
+                }, typingSpeed);
+            } else {
+                setTimeout(() => {
+                typeText(0); // Restart the typing loop
+                }, 1500); // Delay before restarting (in milliseconds)
+            }
+            }
+
+            typeText(0); // Start the typing loop
+        </script>
+
 
         <!-- Typography
         <div class="row tall-row">
